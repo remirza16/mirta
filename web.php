@@ -13,24 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/belajar', function () {
-    echo '<h1>Hello World</h1>';
-    echo '<p>Sedang belajar Laravel</p>';
+Route::get('siswa', function () {
+    $arrSiswa = ["Risa Lestari","Rudi Hermawan","Bambang Kusumo","Lisa Permata"];
+    return view('siswa')->with('siswa',$arrSiswa);
 });
 
-Route::get('/siswa/smkbpi/rpl', function () {
-    echo '<h2 style="text-align: center"><u>Welcome to 11 RPL</u></h2>';
+Route::get('guru', function () {
+    $arrGuru = ["Maya Fitrianti, M.M","Prof. Silvia Nst, M.Farm.","Dr. Umar Agustisnus","Dr. Syahrial, M.Kom."];
+    return view('guru')->with('guru',$arrGuru);
 });
 
-Route::get('/siswa/{remirza}', function ($remirza) {
-    return "Tampilkan data siswa bernama $remirza";
+Route::get('gallery', function () {
+    return view('gallery');
 });
-
-Route::get('/stok_barang/{hp}/{oppo}', function ($hp,$oppo) {
-    return "Cek sisa stok untuk hp oppo";
-});
-
-Route::get('/profile', function () {
-    return view('profile');
-});
-
